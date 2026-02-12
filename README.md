@@ -1,45 +1,85 @@
-# AI Resume Fit Analyzer 🚀
+# 🤖 AI Resume Fit Analyzer
 
-A professional tool to analyze how well a resume matches a job description using Machine Learning (TF-IDF & Cosine Similarity).
+An AI-powered Resume Screening Web Application that analyzes how well a
+resume matches a given Job Description and provides a match score, skill
+gap analysis, and improvement suggestions.
 
-## 📂 Project Structure
-```text
-Screening_Bot/
-├── core/               # AI & ML components (Similarity Scoring)
-├── utils/              # Text extraction & preprocessing
-├── static/             # Frontend assets (CSS, JS)
-├── templates/          # UI Layouts (HTML)
-├── app.py              # Main Flask server entry point
-├── requirements.txt    # Project dependencies
-└── README.md           # This guide
-```
+------------------------------------------------------------------------
 
-## 🛠️ Tech Stack
-- **Backend**: Python (Flask)
-- **ML Engine**: Scikit-Learn (TF-IDF Vectorization)
-- **NLP**: NLTK (Text Preprocessing)
-- **Frontend**: Glassmorphism CSS, Chart.js, Vanilla JS
+## 📌 Features
 
-## 🚀 Deployment Instructions
+-   📄 Upload Resume (PDF / DOCX)
+-   📝 Paste Job Description
+-   📊 Match Score Calculation
+-   ✅ Matched Skills Detection
+-   ❌ Missing Skills Identification
+-   💡 Resume Improvement Suggestions
+-   📈 Visual Score Chart using Chart.js
+-   🌐 Modern and Responsive UI
 
-### 1. Local Run
-```bash
+------------------------------------------------------------------------
+
+## 🧠 How It Works
+
+1.  User uploads resume
+2.  User pastes Job Description
+3.  System extracts text from resume
+4.  Compares resume with job description
+5.  Calculates similarity score
+6.  Displays match percentage, skills, and suggestions
+
+------------------------------------------------------------------------
+
+## 🛠 Tech Stack
+
+### Frontend
+
+-   HTML
+-   CSS
+-   JavaScript
+-   Chart.js
+
+### Backend
+
+-   Python
+-   Flask
+
+### AI / NLP
+
+-   scikit-learn
+-   TF-IDF Vectorization
+-   Cosine Similarity
+
+------------------------------------------------------------------------
+
+## 📁 Project Structure
+
+Screening_Bot/ │ ├── index.html ├── static/ │ ├── style.css │ └── app.js
+│ ├── app.py ├── requirements.txt └── README.md
+
+------------------------------------------------------------------------
+
+## ⚙️ Installation
+
+``` bash
+git clone https://github.com/yourusername/Screening_Bot.git
+cd Screening_Bot
 pip install -r requirements.txt
 python app.py
 ```
 
-### 2. GitHub Upload
-1. Initialize git: `git init`
-2. Add files: `git add .`
-3. Commit: `git commit -m "Initial commit"`
-4. Push to your repository.
+------------------------------------------------------------------------
 
-### 3. Netlify/Vercel/Render
-- **Frontend**: Netlify and Vercel are great for the `static/` and `templates/` parts.
-- **Backend (Recommended)**: For the full Python experience (NLP), I recommend **Render.com** or **Railway.app**. 
-- Simply connect your GitHub and use the start command: `gunicorn app:app`
+## 🎯 Use Cases
 
-## 🧩 How the AI Logic Works (Hybrid Mode)
-The system uses a weighted scoring method:
-- **80% Weight**: Direct Keyword Matching (ensures high accuracy for technical skills).
-- **20% Weight**: Semantic Cosine Similarity (evaluates the depth and context of the resume).
+-   Resume Screening
+-   ATS Simulation
+-   Skill Gap Analysis
+-   Career Optimization
+-   HR Automation
+
+------------------------------------------------------------------------
+
+## 👨‍💻 Author
+
+Sandeep Gudasi
