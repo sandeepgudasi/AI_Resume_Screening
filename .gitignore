@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+ENV/
+.env
+.flaskenv
+uploads/*
+!uploads/.gitkeep
+data/*
+!data/sample_resume.pdf
+!data/test_api.py
+.venv/
+build/
+dist/
+.DS_Store

@@ -1,14 +1,12 @@
 import os
 from flask import Flask, render_template, request, jsonify
 from werkzeug.utils import secure_filename
-from backends.utils.utils import extract_text_from_pdf, extract_text_from_docx
-from backends.core.nlp_engine import ResumeAnalyzer
+from utils.utils import extract_text_from_pdf, extract_text_from_docx
+from core.nlp_engine import ResumeAnalyzer
 
-app = Flask(__name__, 
-            template_folder='../templates',
-            static_folder='../static')
+app = Flask(__name__, template_folder='.')
 
-app.config['UPLOAD_FOLDER'] = '../uploads'
+app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 if not os.path.exists(app.config['UPLOAD_FOLDER']):

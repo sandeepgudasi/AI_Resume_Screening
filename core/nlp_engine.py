@@ -1,7 +1,7 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import re
-from ..utils.utils import clean_text
+from utils.utils import clean_text
 
 class ResumeAnalyzer:
     def __init__(self):
