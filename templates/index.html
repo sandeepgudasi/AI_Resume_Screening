@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Fit Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Resume <span>Fit Analyzer</span></h1>
+            <p>Optimize your career path with AI-driven matching.</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="card">
+                    <h2>Step 1: Job Description</h2>
+                    <textarea id="jd-input" placeholder="Paste the job description here..."></textarea>
+                </div>
+
+                <div class="card">
+                    <h2>Step 2: Upload Resume</h2>
+                    <div id="drop-zone" class="drop-zone">
+                        <span class="drop-zone__prompt">Drop resume here or click to upload</span>
+                        <input type="file" name="resume" id="resume-input" class="drop-zone__input" accept=".pdf,.docx">
+                    </div>
+                    <p id="file-name"></p>
+                </div>
+
+                <button id="analyze-btn" class="primary-btn">Analyze Fit</button>
+            </section>
+
+            <section id="results-section" class="results-section hidden">
+                <div class="results-grid">
+                    <div class="card score-card">
+                        <div id="status-badge" class="status-badge"></div>
+                        <h3>Match Score</h3>
+                        <canvas id="scoreChart"></canvas>
+                        <div id="score-value" class="score-value">0%</div>
+                    </div>
+
+                    <div class="card analysis-card">
+                        <h3>Analysis</h3>
+                        <p id="explanation-text"></p>
+                        <div class="skills-container">
+                            <div class="skill-group">
+                                <h4>Matched Skills</h4>
+                                <div id="matched-skills" class="skills-list"></div>
+                            </div>
+                            <div class="skill-group">
+                                <h4>Missing Skills</h4>
+                                <div id="missing-skills" class="skills-list missing"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card suggestions-card">
+                        <h3>Actionable Suggestions</h3>
+                        <ul id="suggestions-list"></ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="loader" class="loader-container hidden">
+        <div class="loader"></div>
+        <p>Analyzing your resume...</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>
